@@ -1,6 +1,6 @@
 # 🚀 Portfolio Profesional - Rómulo Palacios
 
-[![Deploy Status](https://img.shields.io/badge/deploy-production-success)](https://REPLACE_WITH_YOUR_DOMAIN)
+[![Deploy Status](https://img.shields.io/badge/deploy-production-success)](https://romuloportfolio.vercel.app)
 [![Vue 3](https://img.shields.io/badge/Vue-3.5-42b883)](https://vuejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.3-646cff)](https://vitejs.dev/)
 
@@ -110,6 +110,6 @@ npm run preview
 
 **Desarrollado con** ❤️ **por Rómulo Palacios**
 
-Portfolio: [REPLACE_WITH_YOUR_DOMAIN](https://REPLACE_WITH_YOUR_DOMAIN)  
+Portfolio: [romuloportfolio.vercel.app](https://romuloportfolio.vercel.app)  
 GitHub: [@romulopalacios](https://github.com/romulopalacios)  
 LinkedIn: [romulo-palacios-dev](https://www.linkedin.com/in/romulo-palacios-dev)

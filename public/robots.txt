@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://REPLACE_WITH_YOUR_DOMAIN/sitemap.xml
+Sitemap: https://romuloportfolio.vercel.app/sitemap.xml
