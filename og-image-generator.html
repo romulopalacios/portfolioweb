@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image Generator</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #111; }
+        canvas { border: 2px solid #00ff88; }
+        .controls { margin: 20px 0; }
+        button { 
+            padding: 12px 24px; 
+            background: #00ff88; 
+            border: none; 
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #0a0a0a;
+        }
+        button:hover { background: #00cc6a; }
+    </style>
+</head>
+<body>
+    <h2 style="color: #00ff88; font-family: monospace;">OG Image Generator - 1200x630</h2>
+    <div class="controls">
+        <button onclick="generateImage()">Generar y Descargar PNG</button>
+    </div>
+    <canvas id="canvas" width="1200" height="630"></canvas>
+
+    <script>
+        function generateImage() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo
+            ctx.fillStyle = '#0a0a0a';
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            // Grid de fondo
+            ctx.strokeStyle = '#1a1a1a';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < 1200; x += 40) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, 630);
+                ctx.stroke();
+            }
+            for (let y = 0; y < 630; y += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(1200, y);
+                ctx.stroke();
+            }
+            
+            // Gradientes decorativos
+            const grad1 = ctx.createRadialGradient(900, 150, 0, 900, 150, 400);
+            grad1.addColorStop(0, 'rgba(0, 255, 136, 0.1)');
+            grad1.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad1;
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            const grad2 = ctx.createRadialGradient(300, 500, 0, 300, 500, 350);
+            grad2.addColorStop(0, 'rgba(0, 255, 136, 0.08)');
+            grad2.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad2;
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            // Nombre principal
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 120px Inter, Arial, sans-serif';
+            ctx.letterSpacing = '-4px';
+            ctx.fillText('RÓMULO', 100, 280);
+            ctx.fillText('PALACIOS', 100, 390);
+            
+            // Línea decorativa
+            ctx.fillStyle = '#00ff88';
+            ctx.fillRect(100, 420, 200, 4);
+            
+            // Descripción
+            ctx.fillStyle = '#888888';
+            ctx.font = '500 32px Inter, Arial, sans-serif';
+            ctx.fillText('Ingeniero en Tecnologías de la Información', 100, 480);
+            
+            ctx.fillStyle = '#666666';
+            ctx.font = '400 28px Inter, Arial, sans-serif';
+            ctx.fillText('Desarrollo Móvil • Web • Soluciones IoT', 100, 530);
+            
+            // Logo RP
+            ctx.fillStyle = '#1a1a1a';
+            ctx.strokeStyle = '#333333';
+            ctx.lineWidth = 2;
+            roundRect(ctx, 1050, 80, 80, 80, 16);
+            ctx.fill();
+            ctx.stroke();
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 36px Inter, Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('RP', 1090, 135);
+            
+            ctx.fillStyle = '#00ff88';
+            ctx.beginPath();
+            ctx.arc(1118, 100, 6, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Descargar
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'og-image.png';
+                a.click();
+                URL.revokeObjectURL(url);
+                alert('¡Imagen descargada! Guárdala en /public/og-image.png');
+            });
+        }
+        
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+        
+        // Generar preview al cargar
+        generateImage();
+    </script>
+</body>
+</html>
