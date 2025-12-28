@@ -42,7 +42,3 @@ coverage
 
 # Vitest
 __screenshots__/
-
-# Md files
-*.mdx
-*.md
