@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://tuportfolio.com/sitemap.xml
+Sitemap: https://REPLACE_WITH_YOUR_DOMAIN/sitemap.xml

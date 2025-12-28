@@ -1,0 +1,37 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo degradado profesional -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  
+  <!-- Grid de fondo sutil -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Gradiente decorativo -->
+  <ellipse cx="900" cy="150" rx="400" ry="400" fill="#00ff88" opacity="0.1"/>
+  <ellipse cx="300" cy="500" rx="350" ry="350" fill="#00ff88" opacity="0.08"/>
+  
+  <!-- Contenido principal -->
+  <g>
+    <!-- Nombre grande -->
+    <text x="100" y="280" font-family="Inter, system-ui, sans-serif" font-size="120" font-weight="700" fill="#ffffff" letter-spacing="-4">RÓMULO</text>
+    <text x="100" y="390" font-family="Inter, system-ui, sans-serif" font-size="120" font-weight="700" fill="#ffffff" letter-spacing="-4">PALACIOS</text>
+    
+    <!-- Línea decorativa con acento -->
+    <rect x="100" y="420" width="200" height="4" fill="#00ff88"/>
+    
+    <!-- Descripción -->
+    <text x="100" y="480" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#888888">Ingeniero en Tecnologías de la Información</text>
+    <text x="100" y="530" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="400" fill="#666666">Desarrollo Móvil • Web • Soluciones IoT</text>
+  </g>
+  
+  <!-- Logo RP en esquina -->
+  <g transform="translate(1050, 80)">
+    <rect width="80" height="80" rx="16" fill="#1a1a1a" stroke="#333333" stroke-width="2"/>
+    <text x="40" y="55" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="middle">RP</text>
+    <circle cx="68" cy="20" r="6" fill="#00ff88"/>
+  </g>
+</svg>
