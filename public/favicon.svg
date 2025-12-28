@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo minimalista -->
+  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
+  
+  <!-- Borde sutil -->
+  <rect x="0.5" y="0.5" width="31" height="31" rx="5.5" stroke="#333333" stroke-opacity="0.3"/>
+  
+  <!-- Iniciales RP con tipografía moderna -->
+  <text x="16" y="21" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">RP</text>
+  
+  <!-- Acento de color (punto verde minimalista) -->
+  <circle cx="25" cy="7" r="2" fill="#00ff88" opacity="0.9"/>
+</svg>

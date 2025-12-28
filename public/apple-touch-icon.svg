@@ -1,0 +1,13 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="180" height="180" rx="40" fill="#0a0a0a"/>
+  
+  <!-- Borde sutil -->
+  <rect x="2" y="2" width="176" height="176" rx="38" stroke="#333333" stroke-width="2" stroke-opacity="0.3"/>
+  
+  <!-- Iniciales RP con tipografía moderna -->
+  <text x="90" y="115" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-3">RP</text>
+  
+  <!-- Acento de color -->
+  <circle cx="140" cy="40" r="12" fill="#00ff88" opacity="0.9"/>
+</svg>
