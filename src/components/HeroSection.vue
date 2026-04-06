@@ -1,19 +1,19 @@
 <template>
   <section class="section section-hero" aria-label="Introducción y presentación">
     <div class="container">
-      <div class="hero-badge">Ingeniero en Tecnologías de la Información</div>
+      <div class="hero-badge" v-motion="{ initial: { opacity: 0, y: 20 }, enter: { opacity: 1, y: 0, transition: { duration: 800 } } }">{{ $t('hero.badge') }}</div>  
       <h1 class="hero-title">
-        <div class="title-line">RÓMULO</div>
-        <div class="title-line">PALACIOS</div>
+        <div class="title-line" v-motion="{ initial: { opacity: 0, x: -50 }, enter: { opacity: 1, x: 0, transition: { duration: 800, delay: 200 } } }">{{ $t('hero.title_line1') }}</div>
+        <div class="title-line" v-motion="{ initial: { opacity: 0, x: 50 }, enter: { opacity: 1, x: 0, transition: { duration: 800, delay: 400 } } }">{{ $t('hero.title_line2') }}</div>
       </h1>
-      <div class="hero-subtitle">
-        <span>DESARROLLO MOVIL / WEB</span>
+      <div class="hero-subtitle" v-motion="{ initial: { opacity: 0, y: 20 }, enter: { opacity: 1, y: 0, transition: { duration: 800, delay: 600 } } }">
+        <span>{{ $t('hero.subtitle_part1') }}</span>
         <span class="dot">·</span>
-        <span>SOLUCIONES TECNOLOGICAS</span>
+        <span>{{ $t('hero.subtitle_part2') }}</span>
       </div>
-      <div class="hero-cta">
-        <button class="btn btn-primary" @click="scrollToProjects" aria-label="Ver proyectos destacados">VER PROYECTOS</button>
-        <button class="btn btn-secondary" @click="scrollToContact" aria-label="Ir a formulario de contacto">CONTACTAR</button>
+      <div class="hero-cta" v-motion="{ initial: { opacity: 0, scale: 0.9 }, enter: { opacity: 1, scale: 1, transition: { duration: 800, delay: 800 } } }">
+        <button class="btn btn-primary" @click="scrollToProjects" aria-label="Ver proyectos destacados">{{ $t('hero.cta_projects') }}</button>
+        <button class="btn btn-secondary" @click="scrollToContact" aria-label="Ir a formulario de contacto">{{ $t('hero.cta_contact') }}</button>
       </div>
     </div>
     <div class="section-number" :style="{ opacity: sectionNumberOpacity }">01</div>

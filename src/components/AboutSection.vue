@@ -15,52 +15,52 @@ const sectionNumberOpacity = computed(() => {
 <template>
   <section class="section section-about" aria-label="Información sobre mí">
     <div class="container">
-      <h2 class="section-title">SOBRE MÍ</h2>
+      <h2 class="section-title" v-motion="{ initial: { opacity: 0, y: 30 }, enter: { opacity: 1, y: 0, transition: { duration: 800 } } }">{{ $t('about.title') }}</h2>
       <div class="about-layout">
-        <div class="profile-image-container">
+        <div class="profile-image-container" v-motion="{ initial: { opacity: 0, scale: 0.9 }, enter: { opacity: 1, scale: 1, transition: { duration: 800, delay: 200 } } }">
           <div class="profile-image-wrapper">
-            <img 
-              src="/images/profile.jpg" 
-              alt="Rómulo Palacios" 
+            <img
+              src="/images/profile.jpg"
+              alt="Rómulo Palacios"
               class="profile-image"
               loading="eager"
               @error="(e) => e.target.style.display = 'none'"
             />
           </div>
         </div>
-        <div class="about-content">
+        <div class="about-content" v-motion="{ initial: { opacity: 0, x: 30 }, enter: { opacity: 1, x: 0, transition: { duration: 800, delay: 300 } } }">
           <p class="about-text">
-            Soy Rómulo Palacios, Ingeniero de Tecnologías de la Información. Mi trayectoria se define por tres pilares: Desarrollo (Web/Móvil/IoT), Calidad (QA & Testing) y Estrategia (Análisis de Datos). Me dedico a crear herramientas tecnológicas que optimizan procesos y generan valor real. Siempre listo para el siguiente reto técnico y el aprendizaje continuo en entornos de alta exigencia.
+            {{ $t('about.description') }}
           </p>
 
           <div class="about-details">
             <div class="quick-facts">
               <div class="fact-item">
-                <span class="fact-label">UBICACIÓN</span>
-                <span class="fact-value">Montecristi, Manabí, Ecuador</span>
+                <span class="fact-label">{{ $t('about.location_label') }}</span>
+                <span class="fact-value">{{ $t('about.location_value') }}</span>    
               </div>
               <div class="fact-item">
-                <span class="fact-label">EDUCACIÓN</span>
-                <span class="fact-value">Ingeniería en TI - ULEAM</span>
+                <span class="fact-label">{{ $t('about.education_label') }}</span>
+                <span class="fact-value">{{ $t('about.education_value') }}</span>        
               </div>
               <div class="fact-item">
-                <span class="fact-label">IDIOMAS</span>
-                <span class="fact-value">Español (Nativo), Inglés (Intermedio)</span>
+                <span class="fact-label">{{ $t('about.languages_label') }}</span>
+                <span class="fact-value">{{ $t('about.languages_value') }}</span>
               </div>
               <div class="fact-item">
-                <span class="fact-label">INTERESES</span>
-                <span class="fact-value">Tecnología, Hardware, Innovación</span>
+                <span class="fact-label">{{ $t('about.interests_label') }}</span>
+                <span class="fact-value">{{ $t('about.interests_value') }}</span>
               </div>
             </div>
-            
+
             <div class="action-buttons">
               <a href="/cv_romulopalacios.pdf" download="CV_Romulo_Palacios.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Descargar currículum vitae">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">    
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>   
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
-                DESCARGAR CV
+                {{ $t('about.download_cv') }}
               </a>
             </div>
           </div>

@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "toggle_theme": "Cambiar Tema",
+    "lang_es": "ES",
+    "lang_en": "EN"
+  },
+  "hero": {
+    "badge": "Ingeniero en Tecnologías de la Información",
+    "title_line1": "RÓMULO",
+    "title_line2": "PALACIOS",
+    "subtitle_part1": "DESARROLLO MOVIL / WEB",
+    "subtitle_part2": "SOLUCIONES TECNOLOGICAS",
+    "cta_projects": "VER PROYECTOS",
+    "cta_contact": "CONTACTAR"
+  },
+  "about": {
+    "title": "SOBRE MÍ",
+    "description": "Soy Rómulo Palacios, Ingeniero de Tecnologías de la Información. Mi trayectoria se define por tres pilares: Desarrollo (Web/Móvil/IoT), Calidad (QA & Testing) y Estrategia (Análisis de Datos). Me dedico a crear herramientas tecnológicas que optimizan procesos y generan valor real. Siempre listo para el siguiente reto técnico y el aprendizaje continuo en entornos de alta exigencia.",
+    "location_label": "UBICACIÓN",
+    "location_value": "Montecristi, Manabí, Ecuador",
+    "education_label": "EDUCACIÓN",
+    "education_value": "Ingeniería en TI - ULEAM",
+    "languages_label": "IDIOMAS",
+    "languages_value": "Español (Nativo), Inglés (Intermedio)",
+    "interests_label": "INTERESES",
+    "interests_value": "Tecnología, Hardware, Innovación",
+    "download_cv": "DESCARGAR CV"
+  },
+  "experience": {
+    "title": "EXPERIENCIA PROFESIONAL",
+    "btn_github": "VER EVIDENCIA EN GITHUB",
+    "items": [
+      {
+        "year": "2026",
+        "period": "BOOTCAMP",
+        "position": "QA AUTOMATION ENGINEER",
+        "company": "NTT DATA EUROPE & LATAM",
+        "description": "Especialización intensiva en automatización de pruebas de software. Diseño y ejecución de frameworks E2E para Web y Mobile utilizando metodologías BDD centradas en calidad y escalabilidad.",
+        "tags": ["Java", "Selenium", "Appium", "Postman", "Gherkin", "BDD", "Karate"],
+        "github": "https://github.com/romulopalacios/qa-bootcamp-nttdata"
+      },
+      {
+        "year": "2024",
+        "period": "JUL - DIC",
+        "position": "PRACTICANTE PROFESIONAL TI",
+        "company": "DIRECCIÓN DE INFORMÁTICA E INNOVACIÓN TECNOLÓGICA ULEAM",
+        "description": "Gestión de activos de información en la DIIT: digitalización documental y aplicación de protocolos de seguridad para garantizar la confidencialidad de datos sensibles.",
+        "tags": ["Data Protection Manager", "Ciberseguridad", "Politicas de Seguridad de las TI", "Gestión documental", "Seguridad de la información"]
+      },
+      {
+        "year": "2025",
+        "period": "ENE - JUN",
+        "position": "DESARROLLADOR MÓVIL",
+        "company": "UNIVERSIDAD LAICA ELOY ALFARO DE MANABÍ",
+        "description": "Desarrollo de arquitectura IoT integral (Python, MQTT, PostgreSQL) con visualización de datos en tiempo real mediante aplicación móvil multiplataforma en Flutter.",
+        "tags": ["MQTT", "Flutter", "Dart", "Python", "PostgreSQL", "IoT"]
+      },
+      {
+        "year": "2025",
+        "period": "ENE - DIC",
+        "position": "DESARROLLADOR SOLUCIONES TECNOLÓGICAS IOT",
+        "company": "UNIVERSIDAD LAICA ELOY ALFARO DE MANABÍ",
+        "description": "Modernización integral y automatización del Auditorio 'Leo Cedeño Sánchez', implementando sistemas de control inteligente para optimizar la gestión de infraestructura y recursos audiovisuales.",
+        "tags": ["Domotica", "MQTT", "Sistemas Distribuidos", "Automatización"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "PROYECTOS DESTACADOS",
+    "btn_live": "VER PROYECTO",
+    "btn_github": "CÓDIGO",
+    "items": [
+      {
+        "id": 1,
+        "title": "O11CE | Mundial 2026",
+        "description": "Plataforma deportiva construida con estándares de la industria para soportar alto tráfico. Diseñada para la Copa del Mundo 2026.",
+        "technologies": ["Next.js", "TypeScript", "tRPC", "Prisma", "Tailwind CSS", "Redis", "PostgreSQL"],
+        "github": "https://github.com/romulopalacios/o11ce",
+        "link": "https://o11ce.netlify.app/"
+      },
+      {
+        "id": 2,
+        "title": "Sistema POS & Control de Pedidos",
+        "description": "Punto de Venta moderno, serverless y de alto rendimiento diseñado para la agilización operativa de restaurantes de comida rápida.",
+        "technologies": ["React", "Supabase", "PostgreSQL", "Vercel", "Tailwind", "WebSocket", "BaaS"],
+        "github": "https://github.com/romulopalacios/pos-system",
+        "link": "https://pos-system-tau-two.vercel.app/"
+      },
+      {
+        "id": 3,
+        "title": "Recuerdos Web",
+        "description": "Recuerdos Web es una Progressive Web App (PWA) que permite a parejas y familias crear, enriquecer y revivir recuerdos compartidos.",
+        "technologies": ["Vite", "React", "TypeScript", "Framer Motion", "Supabase", "PostgreSQL", "PWA"],
+        "github": "https://github.com/romulopalacios/recuerdosweb",
+        "link": "https://recuerdosweb.vercel.app"
+      },
+      {
+        "id": 4,
+        "title": "IoT App",
+        "description": "Aplicación multiplataforma de monitoreo y control de dispositivos IoT para invernaderos y cultivos.",
+        "technologies": ["Flutter", "Dart", "PostgreSQL", "Sqlite", "MQTT", "Python"],
+        "github": "https://github.com/romulopalacios/iot_app"
+      },
+      {
+        "id": 5,
+        "title": "Invitación Misteriosa",
+        "description": "La experiencia está diseñada como un misterio por resolver. El destino no se revelará hasta completar todos los acertijos interactivos. Todo con un diseño minimalista, moderno y lleno de microinteracciones.",
+        "technologies": ["Astro", "Gsap", "Swiper", "AOS"],
+        "github": "https://github.com/romulopalacios/aniversario"
+      }
+    ]
+  },
+  "skills": {
+    "title": "HABILIDADES TÉCNICAS",
+    "categories": {
+      "mobile": "MÓVIL",
+      "web": "WEB",
+      "iot": "IoT & BACKEND",
+      "qa": "QA & TESTING",
+      "data": "DATA ANALYSIS",
+      "infra": "INFRAESTRUCTURA"
+    }
+  },
+  "contact": {
+    "title": "¿LISTO PARA COMENZAR?",
+    "headline": {
+      "word1": "Construyamos",
+      "word2": "algo",
+      "word3": "increíble",
+      "word4": "juntos"
+    },
+    "tagline": "Especializado en desarrollo móvil, web y soluciones IoT. Disponible para proyectos freelance y colaboraciones.",
+    "stats": [
+      {
+        "number": "3+",
+        "label": "Proyectos Completados",
+        "target": "3"
+      },
+      {
+        "number": "5+",
+        "label": "Certificaciones",
+        "target": "5"
+      },
+      {
+        "number": "24h",
+        "label": "Tiempo de Respuesta",
+        "target": "24"
+      }
+    ]
+  },
+  "footer": {
+    "about": {
+      "title": "SOBRE MÍ",
+      "desc": "Ingeniero de TI especializado en crear soluciones escalables, desde aplicaciones móviles hasta infraestructura cloud e IoT."
+    },
+    "links": {
+      "title": "ENLACES RÁPIDOS"
+    },
+    "contact": {
+      "title": "CONTACTO",
+      "available": "Disponible para nuevas oportunidades."
+    },
+    "bottom": "Diseñado y desarrollado con "
+  }
+}

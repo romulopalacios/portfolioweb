@@ -1,50 +1,9 @@
-<template>
-  <section class="section section-contact" aria-label="Información de contacto">
-    <div class="background-decoration">
-      <div class="floating-shape shape-1"></div>
-      <div class="floating-shape shape-2"></div>
-      <div class="floating-shape shape-3"></div>
-    </div>
-    
-    <div class="container">
-      <div class="contact-content">
-        <div class="contact-header animate-in" style="animation-delay: 0.1s">
-          <h2 class="section-title">¿LISTO PARA COMENZAR?</h2>
-          <h3 class="contact-headline">
-            <span class="word" style="animation-delay: 0.2s">Construyamos</span>
-            <span class="word" style="animation-delay: 0.3s">algo</span>
-            <span class="word" style="animation-delay: 0.4s">increíble</span>
-            <span class="word" style="animation-delay: 0.5s">juntos</span>
-          </h3>
-          <p class="contact-tagline">Especializado en desarrollo móvil, web y soluciones IoT. Disponible para proyectos freelance y colaboraciones.</p>
-        </div>
-
-        <div class="quick-stats">
-          <div class="stat-item animate-in" style="animation-delay: 0.6s">
-            <div class="stat-number" data-target="3">3+</div>
-            <div class="stat-label">Proyectos Completados</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item animate-in" style="animation-delay: 0.7s">
-            <div class="stat-number" data-target="5">5+</div>
-            <div class="stat-label">Certificaciones</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item animate-in" style="animation-delay: 0.8s">
-            <div class="stat-number" data-target="24">24h</div>
-            <div class="stat-label">Tiempo de Respuesta</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section-number" :style="{ opacity: sectionNumberOpacity }">06</div>
-  </section>
-</template>
-
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const scrollProgress = inject('scrollProgress')
+const { t, tm } = useI18n()
 
 // Sección 06: ocultar cuando está activa (71.45% - 85.74%)
 const sectionNumberOpacity = computed(() => {
@@ -52,7 +11,45 @@ const sectionNumberOpacity = computed(() => {
   if (progress >= 71.45 && progress < 85.74) return 0
   return 0
 })
+
+const stats = computed(() => tm('contact.stats') || [])
 </script>
+
+<template>
+  <section class="section section-contact" aria-label="Información de contacto">
+    <div class="background-decoration">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-header animate-in" style="animation-delay: 0.1s">   
+          <h2 class="section-title">{{ $t('contact.title') }}</h2>
+          <h3 class="contact-headline">
+            <span class="word" style="animation-delay: 0.2s">{{ $t('contact.headline.word1') }}</span>
+            <span class="word" style="animation-delay: 0.3s">{{ $t('contact.headline.word2') }}</span>        
+            <span class="word" style="animation-delay: 0.4s">{{ $t('contact.headline.word3') }}</span>   
+            <span class="word" style="animation-delay: 0.5s">{{ $t('contact.headline.word4') }}</span>      
+          </h3>
+          <p class="contact-tagline">{{ $t('contact.tagline') }}</p>
+        </div>
+
+        <div class="quick-stats">
+          <template v-for="(stat, index) in stats" :key="index">
+            <div class="stat-item animate-in" :style="`animation-delay: ${0.6 + (index * 0.1)}s`">      
+              <div class="stat-number" :data-target="stat.target">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            <div v-if="index < stats.length - 1" class="stat-divider"></div>
+          </template>
+        </div>
+      </div>
+    </div>
+    <div class="section-number" :style="{ opacity: sectionNumberOpacity }">06</div>
+  </section>
+</template>
 
 <style scoped>
 .section {

@@ -12,7 +12,7 @@ const sectionNumberOpacity = computed(() => {
 
 const skillCategories = ref([
   {
-    name: 'MÓVIL',
+    key: 'mobile',
     skills: [
       { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg' },
       { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
@@ -21,7 +21,7 @@ const skillCategories = ref([
     ]
   },
   {
-    name: 'WEB',
+    key: 'web',
     skills: [
       { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
       { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
@@ -31,7 +31,7 @@ const skillCategories = ref([
     ]
   },
   {
-    name: 'IoT & BACKEND',
+    key: 'iot',
     skills: [
       { name: 'Python (FastAPI)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' },
       { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
@@ -43,7 +43,7 @@ const skillCategories = ref([
     ]
   },
   {
-    name: 'QA & TESTING',
+    key: 'qa',
     skills: [
       { name: 'Selenium', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg' },
       { name: 'Appium', icon: '' },
@@ -52,7 +52,7 @@ const skillCategories = ref([
     ]
   },
   {
-    name: 'DATA ANALYSIS',
+    key: 'data',
     skills: [
       { name: 'Power BI', icon: '' },
       { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
@@ -60,7 +60,7 @@ const skillCategories = ref([
     ]
   },
   {
-    name: 'INFRAESTRUCTURA',
+    key: 'infra',
     skills: [
       { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
       { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
@@ -73,13 +73,13 @@ const skillCategories = ref([
 </script>
 
 <template>
-  <section class="section section-skills" aria-label="Habilidades técnicas">
+  <section class="section section-skills" aria-label="Habilidades técnicas">    
     <div class="container">
-      <h2 class="section-title">HABILIDADES TÉCNICAS</h2>
-      
+      <h2 class="section-title" v-motion="{ initial: { opacity: 0, y: 30 }, enter: { opacity: 1, y: 0, transition: { duration: 800 } } }">{{ $t('skills.title') }}</h2>
+
       <div class="skills-grid">
-        <div v-for="category in skillCategories" :key="category.name" class="skill-item">
-          <span class="skill-label">{{ category.name }}</span>
+        <div v-for="(category, index) in skillCategories" :key="category.key" class="skill-item" v-motion="{ initial: { opacity: 0, x: -30 }, enter: { opacity: 1, x: 0, transition: { duration: 600, delay: 200 + (index * 100) } } }">
+          <span class="skill-label">{{ $t(`skills.categories.${category.key}`) }}</span>
           <div class="skill-value">
             <span v-for="skill in category.skills" :key="skill.name" class="tech-tag">
               <img v-if="skill.icon" :src="skill.icon" :alt="skill.name" class="tech-icon" />
@@ -98,6 +98,7 @@ const skillCategories = ref([
   min-width: 100vw;
   width: 100vw;
   height: 100vh;
+
   flex-shrink: 0;
   display: flex;
   align-items: center;

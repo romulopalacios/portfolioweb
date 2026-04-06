@@ -1,17 +1,18 @@
 <script setup>
 import { ref, inject, computed, onMounted, onUnmounted } from 'vue'
 import { useDragScroll } from '../composables/useDragScroll'
-import { projectsData } from '../data/projects'
+import { useI18n } from 'vue-i18n'
 import ProjectCard from './ProjectCard.vue'
 
 const scrollProgress = inject('scrollProgress')
+const { tm, t } = useI18n()
 
-const { 
-  gridRef, 
-  isDragging, 
-  startDrag, 
-  stopDrag, 
-  onDrag, 
+const {
+  gridRef,
+  isDragging,
+  startDrag,
+  stopDrag,
+  onDrag,
   handleLinkClick,
   scrollGrid
 } = useDragScroll()
@@ -21,12 +22,12 @@ let observer = null
 
 onMounted(() => {
   if (!gridRef.value) return
-  
+
   const options = {
     root: gridRef.value,
-    threshold: 0.5 // Se activa cuando al menos el 50% de la tarjeta es visible
+    threshold: 0.5 // Se activa cuando al menos el 50% de la tarjeta es visible 
   }
-  
+
   observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -54,14 +55,14 @@ const sectionNumberOpacity = computed(() => {
   return 0
 })
 
-const projects = ref(projectsData)
+const projects = computed(() => tm('projects.items') || [])
 </script>
 
 <template>
-  <section class="section section-projects" aria-label="Proyectos destacados">
+  <section class="section section-projects" aria-label="Proyectos destacados">  
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">PROYECTOS DESTACADOS</h2>
+      <div class="section-header" v-motion="{ initial: { opacity: 0, y: -20 }, enter: { opacity: 1, y: 0, transition: { duration: 800 } } }">
+        <h2 class="section-title">{{ $t('projects.title') }}</h2>
         <div class="project-indicator">
           [{{ String(currentProjectIndex + 1).padStart(2, '0') }} / {{ String(projects.length).padStart(2, '0') }}]
         </div>
@@ -74,12 +75,14 @@ const projects = ref(projectsData)
         @mouseleave="stopDrag"
         @mouseup="stopDrag"
         @mousemove="onDrag"
+        v-motion="{ initial: { opacity: 0 }, enter: { opacity: 1, transition: { duration: 800, delay: 200 } } }"
       >
         <ProjectCard
           v-for="(project, index) in projects"
           :key="project.id"
           :project="project"
-          :draggingState="isDragging"
+          :index="index"
+          @click="handleLinkClick"
         />
       </div>
     </div>

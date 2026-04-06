@@ -14,7 +14,7 @@
             <span class="name-char" style="animation-delay: 0.5s"> </span>
             <span class="name-char" style="animation-delay: 0.55s">P</span><span class="name-char" style="animation-delay: 0.6s">A</span><span class="name-char" style="animation-delay: 0.65s">L</span><span class="name-char" style="animation-delay: 0.7s">A</span><span class="name-char" style="animation-delay: 0.75s">C</span><span class="name-char" style="animation-delay: 0.8s">I</span><span class="name-char" style="animation-delay: 0.85s">O</span><span class="name-char" style="animation-delay: 0.9s">S</span>
           </h2>
-          <p class="brand-tagline">Ingeniero en Tecnologías de la Información</p>
+          <p class="brand-tagline">{{ $t('footer.about.desc') }}</p>
         </div>
 
         <div class="cta-section animate-on-scroll" style="animation-delay: 0.3s">
@@ -64,8 +64,10 @@
 
 <script setup>
 import { inject, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const scrollProgress = inject('scrollProgress')
+const { t } = useI18n()
 
 // Sección 07: ocultar cuando está activa (85.74% - 100%)
 const sectionNumberOpacity = computed(() => {

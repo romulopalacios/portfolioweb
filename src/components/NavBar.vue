@@ -13,11 +13,19 @@
         <span class="nav-total">07</span>
       </div>
 
-      <button 
-        class="theme-toggle" 
-        @click="toggleTheme"
-        :aria-label="isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
-      >
+      <div class="nav-actions">
+        <button
+          class="lang-toggle"
+          @click="toggleLanguage"
+        >
+          {{ locale === 'es' ? 'EN' : 'ES' }}
+        </button>
+
+        <button
+          class="theme-toggle"
+          @click="toggleTheme"
+          :aria-label="isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'" 
+        >
         <svg v-if="isDark" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="5"/>
           <line x1="12" y1="1" x2="12" y2="3"/>
@@ -33,6 +41,7 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
+      </div>
     </div>
   </nav>
 </template>
@@ -40,6 +49,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useThemeStore } from '../stores/theme'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps({
   scrollProgress: {
@@ -48,8 +58,13 @@ const props = defineProps({
   }
 })
 
+const { locale } = useI18n()
 const themeStore = useThemeStore()
 const { isDark, toggleTheme } = themeStore
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 
 const isScrolled = ref(false)
 const currentSection = computed(() => {
@@ -143,6 +158,28 @@ onUnmounted(() => {
 
 .nav-separator {
   opacity: 0.3;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  padding: 0.5rem;
+  transition: opacity var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  opacity: 0.6;
 }
 
 .theme-toggle {
