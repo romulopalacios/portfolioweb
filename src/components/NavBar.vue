@@ -1,15 +1,15 @@
 <template>
   <nav class="navbar" :class="{ 'scrolled': isScrolled }" role="navigation" aria-label="Navegación principal">
     <div class="navbar-container">
-      <a href="#" class="logo" @click.prevent="scrollToSection(0)">
-        <span class="logo-bracket">[</span>
+      <a href="#inicio" class="logo" @click.prevent="scrollToSection(0)" aria-label="Ir al inicio" role="link">
+        <span class="logo-bracket" aria-hidden="true">[</span>
         <span class="logo-text">PORTFOLIO</span>
-        <span class="logo-bracket">]</span>
+        <span class="logo-bracket" aria-hidden="true">]</span>
       </a>
       
-      <div class="nav-center">
+      <div class="nav-center" aria-live="polite" aria-atomic="true">
         <span class="nav-index">{{ currentSection.toString().padStart(2, '0') }}</span>
-        <span class="nav-separator">/</span>
+        <span class="nav-separator" aria-hidden="true">/</span>
         <span class="nav-total">07</span>
       </div>
 

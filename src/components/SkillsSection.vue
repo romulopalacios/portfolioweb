@@ -14,30 +14,59 @@ const skillCategories = ref([
   {
     name: 'MÓVIL',
     skills: [
-      { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-      { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'Dart', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg' },
-      { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' }
+      { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg' },
+      { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'Dart', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg' },
+      { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg' }
     ]
   },
   {
     name: 'WEB',
     skills: [
-      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-      { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-      { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-      { name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' }
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'tRPC', icon: '' }
     ]
   },
   {
     name: 'IoT & BACKEND',
     skills: [
-      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'MQTT', icon: 'https://mqtt.org/assets/img/mqtt-logo-transp.svg' },
-      { name: 'SQLite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
-      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' }
+      { name: 'Python (FastAPI)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' },
+      { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+      { name: 'ESP32', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+      { name: 'MQTT', icon: '' },
+      { name: 'AMQP', icon: '' },
+      { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+      { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg' }
+    ]
+  },
+  {
+    name: 'QA & TESTING',
+    skills: [
+      { name: 'Selenium', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg' },
+      { name: 'Appium', icon: '' },
+      { name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
+      { name: 'Gherkin', icon: '' }
+    ]
+  },
+  {
+    name: 'DATA ANALYSIS',
+    skills: [
+      { name: 'Power BI', icon: '' },
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+      { name: 'Sports Analytics', icon: '' }
+    ]
+  },
+  {
+    name: 'INFRAESTRUCTURA',
+    skills: [
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+      { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
+      { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' },
+      { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg' },
+      { name: 'SQLite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg' }
     ]
   }
 ])
@@ -47,16 +76,15 @@ const skillCategories = ref([
   <section class="section section-skills" aria-label="Habilidades técnicas">
     <div class="container">
       <h2 class="section-title">HABILIDADES TÉCNICAS</h2>
-      <div class="skills-container">
-        <div v-for="category in skillCategories" :key="category.name" class="skills-category">
-          <h3 class="category-title">{{ category.name }}</h3>
-          <div class="skills-grid">
-            <div v-for="skill in category.skills" :key="skill.name" class="skill-card">
-              <div class="skill-name">{{ skill.name }}</div>
-              <div class="skill-icon-container">
-                <img :src="skill.icon" :alt="skill.name" class="skill-icon" />
-              </div>
-            </div>
+      
+      <div class="skills-grid">
+        <div v-for="category in skillCategories" :key="category.name" class="skill-item">
+          <span class="skill-label">{{ category.name }}</span>
+          <div class="skill-value">
+            <span v-for="skill in category.skills" :key="skill.name" class="tech-tag">
+              <img v-if="skill.icon" :src="skill.icon" :alt="skill.name" class="tech-icon" />
+              {{ skill.name }}
+            </span>
           </div>
         </div>
       </div>
@@ -87,9 +115,9 @@ const skillCategories = ref([
 .container {
   max-width: 1400px;
   width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
-  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-number {
@@ -110,123 +138,85 @@ const skillCategories = ref([
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   color: var(--color-text-mute);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-weight: 500;
-}
-
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.skills-category {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.category-title {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--color-text);
-  font-weight: 600;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-  gap: 0.75rem;
-}
-
-.skill-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 0.5rem;
-  border: 1px solid var(--color-border);
-  transition: all 0.3s ease;
-  cursor: default;
-  background: var(--color-background);
-  min-height: 65px;
-}
-
-.skill-card:hover {
-  border-color: var(--color-text-mute);
-  transform: translateY(-2px);
-}
-
-.skill-name {
-  font-size: 0.7rem;
-  color: var(--color-text);
-  font-weight: 500;
-  text-align: center;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  transition: opacity 0.3s ease;
-}
-
-.skill-card:hover .skill-name {
-  opacity: 0;
-  position: absolute;
-}
-
-.skill-icon-container {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  position: absolute;
-  transition: opacity 0.3s ease;
-}
-
-.skill-card:hover .skill-icon-container {
-  opacity: 1;
-  position: relative;
-}
-
-.skill-icon {
   width: 100%;
-  height: 100%;
+}
+
+.skill-item {
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  cursor: crosshair;
+  min-height: 4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skill-label, .skill-value {
+  grid-area: 1 / 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-label {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  font-weight: 300;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  opacity: 0;
+  transform: translateY(100%);
+  grid-area: 1 / 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+  font-weight: 400;
+  transition: all var(--transition-fast);
+}
+
+.tech-icon {
+  width: 18px;
+  height: 18px;
   object-fit: contain;
-  filter: grayscale(0.8);
-  opacity: 0.9;
-  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all var(--transition-fast);
 }
 
-:root.dark .skill-icon {
-  filter: grayscale(0.8) brightness(1.2);
-}
-
-.skill-card:hover .skill-icon {
-  filter: grayscale(0);
+.skill-item:hover .tech-icon {
+  filter: grayscale(0%);
   opacity: 1;
 }
 
-:root.dark .skill-card:hover .skill-icon {
-  filter: grayscale(0) brightness(1.1);
-}
-
-.skill-name {
-  font-size: 0.7rem;
+.skill-item:hover .tech-tag {
   color: var(--color-text);
-  font-weight: 500;
-  text-align: center;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
 }
 
-@media (max-width: 1200px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    gap: 0.6rem;
-  }
+.skill-item:hover .skill-label {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.skill-item:hover .skill-value {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -234,30 +224,16 @@ const skillCategories = ref([
     padding: 0 4vw;
   }
   
-  .section-title {
-    margin-bottom: 2rem;
+  .skill-item {
+    min-height: 3.5rem;
   }
   
-  .skills-container {
-    gap: 2rem;
+  .skill-label {
+    font-size: 1.5rem;
   }
   
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
-    gap: 0.5rem;
-  }
-  
-  .skill-card {
-    padding: 0.6rem 0.45rem;
-  }
-
-  .skill-icon-container {
-    width: 22px;
-    height: 22px;
-  }
-  
-  .skill-name {
-    font-size: 0.6rem;
+  .skill-value {
+    gap: 0.75rem;
   }
 }
 </style>
